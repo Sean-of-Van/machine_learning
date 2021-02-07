@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+sklearn = "*"
+
+[packages]
+src = {editable = true, file = "file:///C:/Users/seanc/OneDrive/Code/Projects/machine_learning"}
+click = "*"
+coverage = "*"
+awscli = "*"
+flake8 = "*"
+python-dotenv = ">=0.5.1"
+Sphinx = "*"
+pytest = "*"
+numpy = "*"
+
+[requires]
+python_version = "3.9"
