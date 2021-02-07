@@ -3,12 +3,11 @@ import numpy as np
 class Perceptron:
 
     def __init__(self, xTr, yTr, max_iter=100):
-        self.w, self.b = perceptron(xTr, yTr, max_iter)
+        self.w, self.b = self.train(xTr, yTr, max_iter)
 
-
-    def perceptron_update(self, x, y, w):
+    def update(self, x, y, w):
         '''
-        function w=perceptron_update(x,y,w);
+        function w = update(x,y,w);
         
         Implementation of Perceptron weights updating
         Input:
@@ -22,9 +21,9 @@ class Perceptron:
         
         return w + y * x
 
-    def perceptron(self, xTr, yTr, max_iter=100):
+    def train(self, xTr, yTr, max_iter=100):
         '''
-        function w=perceptron(xs,ys);
+        function w=train(xs,ys);
         
         Implementation of a Perceptron classifier
         Input:
@@ -49,7 +48,7 @@ class Perceptron:
             
             for i in range(n):
                 if (yTr[i] * np.dot(w, xTr[i])) <= 0:
-                    w = self.perceptron_update(xTr[i],yTr[i],w)
+                    w = self.update(xTr[i],yTr[i],w)
                     m = m + 1
             
             if m == 0:
